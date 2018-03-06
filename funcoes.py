@@ -31,3 +31,14 @@ def listar():
 
 def falha():
 	print("Opcao Incorreta")
+	
+def buscar(nome):
+    agenda = open("agendatelefonica.csv",'r')
+    for linha in agenda:
+        linha=linha.rstrip()
+    if nome in linha:
+        print(linha)
+    else:
+        print("Nome não localizado")
+    agenda.close()
+buscar(input("Digite o nome"))
